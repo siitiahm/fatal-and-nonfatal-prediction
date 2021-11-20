@@ -1,3 +1,4 @@
+Date,NumberOfSubjects,Fatal,SubjectArmed,SubjectRace,SubjectGender,SubjectAge,NatureOfStop,NumberOfShots,NumberOfOfficers,OfficerRace,OfficerGender,Department,FullNarrative,City,Notes
 3/4/2010,1,N,N,L,U,U,NA,NA,1,W,M,Albuquerque Police Department,NA,Albuquerque,motorized vehicle; no hits
 1/9/2010,1,F,Y,W,M,U,NA,NA,1,W,M,Albuquerque Police Department,NA,Albuquerque,
 6/10/2010,1,F,Y,W,M,U,NA,NA,2,W;W,M;M,Albuquerque Police Department,NA,Albuquerque,
