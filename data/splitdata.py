@@ -42,17 +42,19 @@ def splitData(data, trainData, testData, ratio):
             fandnfpolicedata[index] = line
             index += 1
 
-    fandnfpolicedata.pop(0)
+    atts = fandnfpolicedata.pop(0)
     trainingamount = int(len(fandnfpolicedata) * ratio)
     trainingdata = fandnfpolicedata[0:trainingamount]
     testingdata = fandnfpolicedata[trainingamount+1:len(fandnfpolicedata)]
 
     with open(trainData, "w", encoding="UTF-8") as file:
+        file.write(atts)
         for case in trainingdata:
             file.write(str(case))
         file.close()
 
     with open(testData, "w", encoding="UTF-8") as file:
+        file.write(atts)
         for case in testingdata:
             file.write(str(case))
         file.close()
@@ -77,24 +79,27 @@ def splitDataRandom(data, trainData, testData, ratio):
             fandnfpolicedata[index] = line
             index += 1
 
-    fandnfpolicedata.pop(0)
+    atts = fandnfpolicedata.pop(0)
     random.shuffle(fandnfpolicedata)
     trainingamount = int(len(fandnfpolicedata) * ratio)
     trainingdata = fandnfpolicedata[0:trainingamount]
     testingdata = fandnfpolicedata[trainingamount+1:len(fandnfpolicedata)]
 
     with open(trainData, "w", encoding="UTF-8") as file:
+        file.write(atts)
         for case in trainingdata:
             file.write(str(case))
         file.close()
 
     with open(testData, "w", encoding="UTF-8") as file:
+        file.write(atts)
         for case in testingdata:
             file.write(str(case))
         file.close()
 
 def main():
     options = parser.parse_args()
+    print(options)
     mode = options.mode       # first get the mode
 
     print("mode is " + mode)
@@ -103,11 +108,11 @@ def main():
     """
     #random Splitting
     if(mode == "R"):
-        splitDataRandom("police-data.csv", "training-data.txt", "test-uncleaned.txt", 0.7)
+        splitDataRandom("nf-vice-data.csv", "training-uncleaned.txt", "test-uncleaned.txt", 0.7)
 
     #normal Splitting
     if(mode == "N"):
-        splitData("police-data.csv", "training-data.txt", "test-uncleaned.txt", 0.7)
+        splitData("nf-vice-data.csv", "training-uncleaned.txt", "test-uncleaned.txt", 0.7)
 
 def showHelper():
     """
